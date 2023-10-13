@@ -1,24 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+  body, html {
+  margin: 0 auto;
+  padding: 0;
+}
 :root {
     --bs-white-rgb: 255, 255, 255;
     --bs-primary-rgb: 244, 98, 58;
     --bs-dark-rgb: 33, 37, 41;
     --bs-light-rgb: 248, 249, 250;
     --bs-navbar-color: rgba(0, 0, 0, 0.55);
+    --bs-body-font-family: Merriweather, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #212529;
+
+
 }
 
 body {
     margin: 0;
+    font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  text-align: var(--bs-body-text-align);
+  background-color: var(--bs-body-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .navbar{
-    /* position: relative;
-  display: flex; */
-  /* flex-wrap: wrap; */
+  /* position: relative;
+  display: flex; 
+  flex-wrap: wrap; */
   align-items: center;
   justify-content: space-between;
-  --bs-navbar-brand-padding-y: 0.3125rem;
+  /* --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
+  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x); */
+
+
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  /* transition: background-color 0.2s ease; */
+
+  /* margin: 0;
+  padding: 0;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  max-width: 100% !important;
+  display: block; */
+
+
 }
+
 
 /* .navbar > .container,{
   display: flex;
@@ -28,20 +69,30 @@ body {
 } */
 
 .navbar-nav{
+  /* ul */
+  /* display: flex;
+  flex-direction: column; */
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding-left: 0;
+    /* margin-bottom: 0; */
     overflow: hidden;
+
 }
 
-.navbar-nav a {
-    float: right;
+.navbar-nav li{
+  float: right;
+
+}
+
+.navbar-nav li a {
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0px 16px;
     text-decoration: none;
     font-size: 17px;
-    color: #212529;    
+    color: #212529;   
+    display: block;
+ 
   }
 
   /* .navbar-expand-lg {
@@ -61,31 +112,30 @@ body {
     color: var(--bs-navbar-brand-color); */
     text-decoration: none;
     white-space: nowrap;
-    float: left;
-
-}
-
-#mainNav {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  /* transition: background-color 0.2s ease; */
-
-}
-
-#mainNav .navbar-brand {
+    float: left !important;
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     /* color: #212529; */
-  }
+}
 
-  #mainNav .navbar-nav .nav-item {
+/* .navbar .navbar-brand {
+    
+  } */
+
+.nav-item {
     color: #6c757d;
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   font-size: 0.9rem;
   /* padding: 0.75rem 0; */
+
+
   }
 
+
+  .navbar .icon {
+    display: none;
+  }
   /* .nav-item{
     color: var(--bs-nav-tabs-link-active-color);
     background-color: var(--bs-nav-tabs-link-active-bg);
@@ -123,7 +173,8 @@ body {
 
 .ms-auto {
     margin-left: auto !important;
-  }
+}
+
 
   /* .py-3 {
     padding-top: 1rem !important;
@@ -131,23 +182,40 @@ body {
   } */
 
 
-  /* .container-fluid{
-  --bs-gutter-x: 1.5rem;
+  .container-fluid{
+  /* --bs-gutter-x: 1.5rem; */
   --bs-gutter-y: 0;
   width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
-} */
+}
 
 .img-fluid {
     max-width: 100%;
-    height: auto;
+    height: 100%;
+    /* object-fit: cover; */
   }
 
-  .portfolio-box{
+  /* .portfolio-box{
     
+  } */
+
+  .p-0 {
+    padding: 0 !important;
+  }
+
+  .g-0{
+    /* --bs-gutter-x: 0;
+    --bs-gutter-y: 0; */
+    /* display: flex; */
+
+    row-gap: 0px !important;
+    column-gap: 0px !important;
+    grid-gap: 0px 0px !important;
+    grid-row-gap: 0px;   
+
   }
 
   .h-100 {
@@ -156,18 +224,18 @@ body {
 
   .row {
 
+    /* --bs-gutter-x: 1.5rem; */
+    --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
-
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
   }
 
-  .align-self-end {
+  /* .align-self-end {
     align-self: flex-end !important;
-  }
-  
-  .align-self-baseline {
-    align-self: baseline !important;
-  }
+  } */
 
 .text-center {
     text-align: center !important;
@@ -278,9 +346,9 @@ h1, .h1 {
     justify-content: center !important;
   }
 
-  .align-self-baseline {
+  /* .align-self-baseline {
     align-self: baseline !important;
-  }
+  } */
 
   .col-lg-8 {
     flex: 0 0 auto;
@@ -292,9 +360,9 @@ h1, .h1 {
     background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
   }
 
-  .mt-0 {
+  /* .mt-0 {
     margin-top: 0 !important;
-  }
+  } */
   
   .page-section {
     padding: 8rem 0;
@@ -320,8 +388,7 @@ h1, .h1 {
     width: 25%;
   }
 
-  .container,
-  .container-fluid{
+  /* .container{
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     width: 100%;
@@ -329,7 +396,7 @@ h1, .h1 {
     padding-left: calc(var(--bs-gutter-x) * 0.5);
     margin-right: auto;
     margin-left: auto;
-  }
+  } */
 
   .col-lg-4 {
     flex: 0 0 auto;
@@ -411,3 +478,98 @@ h1, .h1 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }
+
+  @media only screen and (max-width: 425px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+      font-size: 20px;
+
+    }
+  }
+
+
+@media only screen and (min-width: 426px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+
+}
+
+  /* For desktop: */
+/* .col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {
+  flex: 0 0 auto;
+  width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;} */
+
+
+
+@media only screen and (min-width: 769px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {
+    flex: 0 0 auto;
+    width: 25%;}
+  .col-4 {
+    /* flex: 0 0 auto; */
+    width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {
+    /* flex: 0 0 auto; */
+    width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {
+    /* flex: 0 0 auto; */
+    width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+/* @media only screen and (min-width: 600px) {
+
+.icon {
+  display: none;
+}
+} */
+
+
+@media only screen and (max-width: 600px) {
+  .navbar .icon {
+    float: right;
+    display: block;
+    position: absolute;
+    right: 0;
+    /* top: 0; */
+    /* float: none; */
+    /* text-align: left; */
+  }
+  .collapse {display: none;}
+  
+}
